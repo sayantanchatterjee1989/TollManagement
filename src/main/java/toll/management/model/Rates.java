@@ -1,31 +1,21 @@
 package toll.management.model;
 
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.stereotype.Component;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity
-@Table(name = "RATES")
+@Component
+@ConfigurationProperties("toll")
 public class Rates {
-	@Id
-	@GeneratedValue
-	private int id;
-	
-	@Column(name="SINGLE")
 	private int single;
-	
-	@Column(name="RETURN_TRIP")
-	private int returnTrip;
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
+	private int back;
 
 	public int getSingle() {
 		return single;
@@ -35,13 +25,15 @@ public class Rates {
 		this.single = single;
 	}
 
-	public int getReturnTrip() {
-		return returnTrip;
+	public int getBack() {
+		return back;
 	}
 
-	public void setReturnTrip(int returnTrip) {
-		this.returnTrip = returnTrip;
+	public void setBack(int back) {
+		this.back = back;
 	}
+
+
 	
 	
 

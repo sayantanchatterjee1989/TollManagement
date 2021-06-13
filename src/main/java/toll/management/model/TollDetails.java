@@ -1,5 +1,8 @@
 package toll.management.model;
 
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.stereotype.Component;
+
 import java.sql.Date;
 import java.time.LocalDate;
 
@@ -10,19 +13,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
-@Entity
-@Table(name="TOLL_DETAILS")
+@Component
 public class TollDetails {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int tollDetailsId;
 	
-	@Column(name="VEHICLE_NUMBER")
+
 	private String vehicleNumber;
 	
-	@Column(name="ROUTE")
+
 	private String route;
 	
 	@Column(name="AMOUNT")
