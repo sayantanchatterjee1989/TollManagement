@@ -24,6 +24,7 @@ public class TollManagementController {
 	@RequestMapping("/{route}")
 	public Map<String, String> createPass(@RequestParam String vehicleNumber, @PathVariable String route) {
 		System.out.println("Vehicle Number : "+vehicleNumber);
+		System.out.println("Vehicle Number 2 : "+vehicleNumber);
 		return tms.createPass(route, vehicleNumber);
 	}
 
